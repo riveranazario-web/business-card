@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Coming Soon | RPM</title>
+  <meta name="description" content="Realty Property Management portfolio — coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #cce0f5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 8px 40px rgba(38,66,42,0.15);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .top-bar {
+      height: 5px;
+      background: linear-gradient(90deg, #26422A 0%, #EA672D 55%, #5D372A 100%);
+    }
+
+    /* ── Header ── */
+    .card-header {
+      background: #D2E8FF;
+      padding: 22px 24px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .card-header img {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .tagline { text-align: right; }
+    .tagline .t1 {
+      font-size: 11px;
+      color: rgba(38,66,42,0.55);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .tagline .t2 {
+      font-size: 11px;
+      color: #5D372A;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* ── Body ── */
+    .card-body {
+      padding: 32px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Animated hard hat icon */
+    .icon-wrap {
+      width: 72px;
+      height: 72px;
+      background: #D2E8FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);   box-shadow: 0 0 0 0 rgba(210,232,255,0.6); }
+      50%       { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(210,232,255,0); }
+    }
+
+    .icon-wrap i {
+      font-size: 34px;
+      color: #26422A;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #EA672D;
+      border: 0.5px solid rgba(234,103,45,0.4);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .main-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #26422A;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .sub-text {
+      font-size: 12px;
+      color: rgba(38,66,42,0.55);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 300px;
+    }
+
+    /* ── Progress bar ── */
+    .progress-wrap {
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .progress-label span:first-child {
+      font-size: 9.5px;
+      color: rgba(38,66,42,0.45);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .progress-label span:last-child {
+      font-size: 9.5px;
+      color: #EA672D;
+      font-weight: 600;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 5px;
+      background: rgba(38,66,42,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #26422A, #EA672D);
+      border-radius: 10px;
+      animation: fillBar 2s ease forwards 0.5s;
+    }
+
+    @keyframes fillBar {
+      from { width: 0%; }
+      to   { width: 35%; }
+    }
+
+    .div {
+      height: 0.5px;
+      background: rgba(38,66,42,0.1);
+      width: 100%;
+      margin: 0 0 24px;
+    }
+
+    /* ── Action buttons ── */
+    .notify-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #26422A;
+      color: #FFEEBC;
+      text-decoration: none;
+      padding: 12px 0;
+      border-radius: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+    .notify-btn:hover { background: #1a2e1d; }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(38,66,42,0.06);
+      border: 0.5px solid rgba(38,66,42,0.18);
+      color: #26422A;
+      text-decoration: none;
+      padding: 11px 0;
+      border-radius: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      width: 100%;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(38,66,42,0.12); }
+
+    /* ── Footer ── */
+    .card-footer {
+      padding: 10px 24px 14px;
+      background: #f0f7ff;
+      border-top: 0.5px solid rgba(38,66,42,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-text {
+      font-size: 8.5px;
+      color: rgba(38,66,42,0.35);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .footer-dots { display: flex; gap: 4px; align-items: center; }
+    .dot { width: 5px; height: 5px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-bar"></div>
+
+  <div class="card-header">
+    <img src="data:image/png;base64," alt="RPM Realty Property Management Logo">
+    <div class="tagline">
+      <div class="t1">Your Asset.</div>
+      <div class="t2">Our Priority.</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <div class="icon-wrap">
+      <i class="ti ti-tools"></i>
+    </div>
+
+    <span class="badge">Coming Soon</span>
+
+    <h1 class="main-title">Portfolio Under<br>Construction</h1>
+
+    <p class="sub-text">
+      We're putting together a showcase of our finest properties and completed projects.
+      Check back soon — great things are on the way.
+    </p>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Build Progress</span>
+        <span>35%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <a class="notify-btn" href="mailto:hrivera@rpmpropertypr.com?subject=Portfolio%20Update%20Request&body=Hi%20Héctor%2C%20I'd%20like%20to%20be%20notified%20when%20the%20RPM%20portfolio%20is%20live.">
+      <i class="ti ti-bell" style="font-size:15px;"></i>
+      Notify Me When Live
+    </a>
+
+    <a class="back-btn" href="https://riveranazario-web.github.io/business-card/">
+      <i class="ti ti-arrow-left" style="font-size:15px;"></i>
+      Back to My Card
+    </a>
+
+  </div>
+
+  <div class="card-footer">
+    <span class="footer-text">RPM · Puerto Rico</span>
+    <div class="footer-dots">
+      <div class="dot" style="background:#26422A;"></div>
+      <div class="dot" style="background:#EA672D;"></div>
+      <div class="dot" style="background:#5D372A;"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
